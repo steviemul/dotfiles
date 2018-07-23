@@ -1,0 +1,25 @@
+function startvm() {
+  VBoxManage startvm $1 --type=headless
+}
+
+function stopvm() {
+  VBoxManage controlvm $1 poweroff
+}
+
+function savevm() {
+  VBoxManage controlvm $1 savestate
+  VBoxManage snapshot $1 take $2
+}
+
+function restorevm() {
+  VBoxManage snapshot $1 restore $2
+}
+
+function deletesh() {
+  VBoxManage snapshot $1 delete $2
+}
+
+function runningvms() {
+  VBoxManage list runningvms
+}
+

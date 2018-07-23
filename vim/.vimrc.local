@@ -1,0 +1,8 @@
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+hi Visual term=reverse cterm=bold ctermbg=Grey 
+
+nnoremap ; :
