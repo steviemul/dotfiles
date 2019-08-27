@@ -1,0 +1,62 @@
+[http]
+	proxy =
+
+[https]
+	proxy =
+
+[user]
+  name =
+  email =
+
+[alias]
+  # Search
+  f = "!git ls-files | grep -i"
+  g = "grep --break --heading --line-number"
+  grep = grep -Ii
+  gr = grep -Ii
+
+  # Listing commands
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lt = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  wc = whatchanged
+
+  fl = log -u
+  # Diff commands
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  # Common shortcuts
+  br = branch
+  co = checkout
+  cl = clone
+  st = status -s
+
+  r = reset
+  r1 = reset HEAD^
+  rv = reset HEAD^ --hard
+
+  pso = "!git push origin `git-current-branch`"
+  plo = "!git pull origin `git-current-branch`"
+
+[grep]
+  lineNumber = true
+  extendRegexp = true
+
+[color]
+  ui = auto
+[push]
+	default = simple
+[core]
+	editor = vim
+[merge]
+	tool = meld
+[credential]
+	helper = cache
+
+[rebase]
+  instructionFormat = %s (%an)
